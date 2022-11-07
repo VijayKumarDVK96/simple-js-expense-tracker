@@ -85,7 +85,7 @@ const updateValues = function() {
   moneyPlusEl.innerText = `₹${income}`;
   moneyMinusEl.innerText = `₹${expense}`;
   balance.innerText = `₹${total}`;
-  console.log(total);
+  // console.log(total);
 }
 
 // 4, Remove transaction by checking and filtering the transactions array and update it to storage and call init
