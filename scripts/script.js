@@ -1,7 +1,5 @@
 'use strict';
 
-// 1, Initialize global variables
-
 const balanceEl = document.getElementById('balance');
 const moneyPlusEl = document.getElementById('money-plus');
 const moneyMinusEl = document.getElementById('money-minus');
@@ -12,7 +10,7 @@ const amountEl = document.getElementById('amount');
 
 let transactions = localStorage.getItem('transactions') != null ? JSON.parse(localStorage.getItem('transactions')) : [];
 
-// 2, Initialize init function to initiate the functionalities
+// 1, Create init function to initiate the functionalities
 
 const init = function() {
   listEl.innerHTML = null;
@@ -20,7 +18,7 @@ const init = function() {
   updateValues();
 };
 
-// 3(a), Create add transaction function and update it to list
+// 2, Create add transaction function and update it to list
 
 const addTransactionsDOM = function(transaction) {
   const sign = (transaction.amount < 0) ? '-' : '+';
@@ -32,7 +30,7 @@ const addTransactionsDOM = function(transaction) {
   listEl.appendChild(item);
 }
 
-// 3(b), Submit function - fetch values from form with validations - add it to storage - call update values
+// 3, Submit function - fetch values from form with validations - add it to storage - call update values
 
 formEl.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -68,7 +66,7 @@ formEl.addEventListener('submit', (e) => {
   }
 });
 
-// 3(c), Check transactions array and calculate income, expense and total
+// 4, Check transactions array and calculate income, expense and total
 
 const updateValues = function() {
   const amounts = transactions.map((transaction) => transaction.amount);
@@ -88,7 +86,7 @@ const updateValues = function() {
   // console.log(total);
 }
 
-// 4, Remove transaction by checking and filtering the transactions array and update it to storage and call init
+// 5, Remove transaction by checking and filtering the transactions array and update it to storage
 
 const removeTransaction = function(id) {
   transactions = transactions.filter((transaction) => transaction.id !== id);
@@ -96,5 +94,5 @@ const removeTransaction = function(id) {
   init();
 }
 
-// 5, Call init as first function to load
+// 6, Call init as first function to load
 init();
