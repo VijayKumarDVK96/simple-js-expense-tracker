@@ -1,4 +1,4 @@
-# Expense Tracker with Javascript
+# Expense Tracker with JavaScript
 
 **DEMO :** https://spiffy-rolypoly-587d37.netlify.app/
 
