@@ -8,6 +8,7 @@ Developed a responsive website for tracking the expenses with Javascript where u
 
 # Pseudo Code
 
+ - Project data should be stored in local storage.
  - Create init function to initiate the functionalities.
  - Create add transaction function and update it to list.
  - Submit function - fetch values from form with validations - add it to storage - call update values.
